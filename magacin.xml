@@ -1,4 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <Magacin>
+    <Artikal>
+        <Naziv sifra_artikla="321123">
+            Mleko
+        </Naziv>
 
+        <DatumIzrade>
+            <Dan>2</Dan>
+            <Mesec>5</Mesec>
+            <Godina>2020</Godina>
+        </DatumIzrade>
+
+        <Cena tip="dinar">95</Cena>
+
+        <KompanijaProdavca>
+            <ImeKompanije>Imlek D.O.O</ImeKompanije>
+            <AdresaKompanije>Neznanog Junaka bb</AdresaKompanije>
+        </KompanijaProdavca>
+
+        <EmailProdavca tip="sluzbeni">support@imlek.rs</EmailProdavca>
+    </Artikal>
+
+    <Artikal>
+        <Naziv sifra_artikla="321123">
+            Kafa
+        </Naziv>
+
+        <DatumIzrade>
+            <Dan>17</Dan>
+            <Mesec>3</Mesec>
+            <Godina>2020</Godina>
+        </DatumIzrade>
+
+        <Cena tip="euro">1.85</Cena>
+
+        <KompanijaProdavca>
+            <ImeKompanije>Bonito</ImeKompanije>
+            <AdresaKompanije>Omladinskih Brigada 32</AdresaKompanije>
+        </KompanijaProdavca>
+
+        <EmailProdavca tip="privatni">bonito_ceo@gmail.com</EmailProdavca>
+    </Artikal>
 </Magacin>
