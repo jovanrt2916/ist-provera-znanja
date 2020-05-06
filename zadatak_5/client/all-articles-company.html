@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Svi artikli kompanije <span id="companyName"></span></h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Naziv</th>
+        <th>Cena</th>
+    </tr>
+    </thead>
+
+    <tbody id="articles">
+
+    </tbody>
+</table>
+
+<script>
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', '/api/all-articles?companyName', true);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+
+            handleResponse(response);
+        }
+    };
+    xhr.send();
+
+    function handleResponse(response) {
+        let articlesElement = document.querySelector('#articles'),
+            companyNameElement = document.querySelector('#companyName');
+
+        response.forEach(article => {
+            articlesElement.innerHTML += `
+                    <tr>
+                        <td>${article.id}</td>
+                        <td>${article.name}</td>
+                        <td>${article.price}</td>
+                    </tr>
+                `;
+        });
+
+        companyNameElement.innerHTML = response[0].companyName;
+    }
+</script>
+</body>
+</html>

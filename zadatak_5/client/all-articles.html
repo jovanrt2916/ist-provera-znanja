@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Svi artikli</title>
+</head>
+<body>
+    <h2>Svi artikli</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Naziv</th>
+                <th>Cena</th>
+                <th>Kompanija</th>
+            </tr>
+        </thead>
+
+        <tbody id="articles">
+
+        </tbody>
+    </table>
+
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', '/api/all-articles', true);
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                let response = JSON.parse(this.responseText);
+
+                handleResponse(response);
+            }
+        };
+        xhr.send();
+
+        function handleResponse(response) {
+            let articlesElement = document.querySelector('#articles');
+            response.forEach(article => {
+                articlesElement.innerHTML += `
+                    <tr>
+                        <td>${article.id}</td>
+                        <td>${article.name}</td>
+                        <td>${article.price}</td>
+                        <td>${article.companyName}</td>
+                    </tr>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
