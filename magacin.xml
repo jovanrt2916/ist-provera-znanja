@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE Adresar SYSTEM "magacin.dtd">
 <Magacin>
     <Artikal>
         <Naziv sifra_artikla="321123">
@@ -11,7 +12,7 @@
             <Godina>2020</Godina>
         </DatumIzrade>
 
-        <Cena tip="dinar">95</Cena>
+        <Cena>95</Cena>
 
         <KompanijaProdavca>
             <ImeKompanije>Imlek D.O.O</ImeKompanije>
@@ -22,7 +23,7 @@
     </Artikal>
 
     <Artikal>
-        <Naziv sifra_artikla="321123">
+        <Naziv sifra_artikla="800880">
             Kafa
         </Naziv>
 
